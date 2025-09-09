@@ -23,8 +23,8 @@
 
 #### パッケージのインストールとライブラリの読み込み ####
 # 必要なパッケージのリスト
-required_packages <- c("readr", "utils","tcltk","forecast","tools", "tsoutliers",
-                       "plotly","htmlwidgets","tidyverse","rstudioapi")
+required_packages <- c("readr", "tcltk","tidyverse","forecast", "tsoutliers",
+                       "plotly","htmlwidgets")
 
 # パッケージがインストールされているか確認し、インストールされていなければインストール
 install_if_missing <- function(p) {
@@ -401,11 +401,11 @@ plot <- plot_ly() %>%
   add_text(data = df[df$imp_Judge1 == "TF", ], x = ~date, y=~val, text = ~imp_Judge_all, 
            textposition='top center') %>%
   layout(
-    xaxis = list(title = "日時",titlefont = list(size = 26),
-                 tickfont = list(size = 26),
+    xaxis = list(title = "日時",titlefont = list(size = 20),
+                 tickfont = list(size = 20),
                  tickformat = "%H:%M<br>%m/%d/%a<br>%Y"), #x軸の文字サイズ,デフォ13
-    yaxis = list(title = "電力消費量[kWh]",　titlefont = list(size = 26),
-                 tickfont = list(size = 26))   #y軸の文字サイズ,デフォ13
+    yaxis = list(title = "電力消費量[kWh]",　titlefont = list(size = 20),
+                 tickfont = list(size = 20))   #y軸の文字サイズ,デフォ13
   )
 plot
 
